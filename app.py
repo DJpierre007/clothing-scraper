@@ -13,8 +13,7 @@ def search():
     data = request.json
     print("Received:", data)
 
-    # Fake product results
-    fake_results = [
+    return jsonify([
         {
             "product_name": "Brown Leather Boots",
             "price": "£129",
@@ -29,9 +28,7 @@ def search():
             "image_url": "https://m.media-amazon.com/images/I/61qOT2LQfKL._AC_UX695_.jpg",
             "product_url": "https://www.adidas.co.uk/product/white-trainers"
         }
-    ]
-
-    return jsonify(fake_results)
+    ])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
